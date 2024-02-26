@@ -125,8 +125,8 @@ glm_result <-
 summary( glm_result )
 result <-
 	svymean(
-		~ how_often_use_cleaner_purifier ,
-		rss_design
+		~ as.numeric( ven_use > 0 ) ,
+		subset( rss_design , ven_use >= 0 )
 	)
 
 stopifnot( round( coef( result ) , 3 ) == .379 )
