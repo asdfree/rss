@@ -15,9 +15,9 @@ rss_df[ , 'one' ] <- 1
 # rss_fn <- file.path( path.expand( "~" ) , "RSS" , "this_file.rds" )
 # saveRDS( rss_df , file = rss_fn , compress = FALSE )
 # rss_df <- readRDS( rss_fn )
-options( survey.lonely.psu = "adjust" )
-
 library(survey)
+
+options( survey.lonely.psu = "adjust" )
 
 rss_design <- 
 	svydesign( 
